@@ -1,0 +1,14 @@
+:root {
+  font-family: Noto Sans CJK TC,Source Han Sans TW,Microsoft Jhenghei,"微軟正黑體",Source Han Sans,Heiti TC,"黑體-繁",Lihei Pro,"儷黑 Pro",sans-serif;
+  background: hsl(0,0%,95%);
+  color: hsl(0, 0%, 30%);
+  font-size: 16px;
+  line-height: 1.3em;
+}
+
+body {
+  margin: 0;
+  padding:  1rem;
+}
+
+.form {}
