@@ -140,6 +140,11 @@ function App() {
                 {...register(`definitions.${definitionIndex}.description`)}
               />
             </div>
+            <hr />
+            <div className="field">
+              <label>type (潘世光、博利亞阿法字典)</label>
+              <input {...register(`definitions.${definitionIndex}.type`)} />
+            </div>
           </div>
           {definitionsVisibility[definitionIndex] && (
             <>
@@ -185,44 +190,6 @@ function App() {
                   new example to definition {definitionIndex + 1}
                 </button>
               </div>
-              {definition.references?.map((reference, referenceIndex) => (
-                <div className="definitionItem" key={referenceIndex}>
-                  <hr />
-                  <div className="reference grid">
-                    <div className="field">
-                      <label>reference {referenceIndex + 1}</label>
-                      <input
-                        {...register(
-                          `definitions.${definitionIndex}.references.${referenceIndex}`
-                        )}
-                      />
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        removeDefinitionItem(
-                          definitionIndex,
-                          referenceIndex,
-                          "reference"
-                        )
-                      }
-                    >
-                      <CgTrash />
-                    </button>
-                  </div>
-                </div>
-              ))}
-              <hr />
-              <div className="addDefinitionItem">
-                <button
-                  type="button"
-                  onClick={() => {
-                    addDefinitionItem(definitionIndex, "reference");
-                  }}
-                >
-                  new reference to definition {definitionIndex + 1}
-                </button>
-              </div>
               {definition.synonyms?.map((synonym, synonymIndex) => (
                 <div className="definitionItem" key={synonymIndex}>
                   <hr />
@@ -259,6 +226,46 @@ function App() {
                   }}
                 >
                   new synonym to definition {definitionIndex + 1}
+                </button>
+              </div>
+              {definition.references?.map((reference, referenceIndex) => (
+                <div className="definitionItem" key={referenceIndex}>
+                  <hr />
+                  <div className="reference grid">
+                    <div className="field">
+                      <label>
+                        reference {referenceIndex + 1} (蔡中涵大辭典)
+                      </label>
+                      <input
+                        {...register(
+                          `definitions.${definitionIndex}.references.${referenceIndex}`
+                        )}
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        removeDefinitionItem(
+                          definitionIndex,
+                          referenceIndex,
+                          "reference"
+                        )
+                      }
+                    >
+                      <CgTrash />
+                    </button>
+                  </div>
+                </div>
+              ))}
+              <hr />
+              <div className="addDefinitionItem">
+                <button
+                  type="button"
+                  onClick={() => {
+                    addDefinitionItem(definitionIndex, "reference");
+                  }}
+                >
+                  new reference to definition {definitionIndex + 1}
                 </button>
               </div>
             </>
