@@ -34,6 +34,21 @@ export const entry = {
   t: "a",
 };
 
+const entryM = {
+  h: [
+    { d: [{ s: ["`'ad'ad~", "`wadwad~"], f: "étaler : (pour faire sécher)" }] },
+  ],
+  t: "'a'ad",
+};
+
+const entryS = {
+  t: "'a'owi",
+  h: [
+    { d: [{ f: "重量偏向一邊，翹起來。", r: ["`ma'a'owi~"] }] },
+    { d: [{ f: "重量偏向一邊，翹起來。", r: ["`ma'a'owi~"] }] },
+  ],
+};
+
 export const entryFormData = {
   definitions: [
     {

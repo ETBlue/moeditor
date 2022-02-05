@@ -36,6 +36,27 @@ function App() {
     examples.splice(exampleIndex, 1);
     setValue(`definitions.${definitionIndex}.examples`, examples);
   };
+  const addDefinitionItem = (
+    definitionIndex: number,
+    itemType: "synonym" | "reference"
+  ) => {
+    const newDefinitionItemIndex =
+      watch(`definitions.${definitionIndex}.${itemType}s`)?.length || 0;
+    setValue(
+      `definitions.${definitionIndex}.${itemType}s.${newDefinitionItemIndex}`,
+      ""
+    );
+  };
+  const removeDefinitionItem = (
+    definitionIndex: number,
+    definitionItemIndex: number,
+    itemType: "synonym" | "reference"
+  ) => {
+    const definitionItems =
+      watch(`definitions.${definitionIndex}.${itemType}s`) || [];
+    definitionItems.splice(definitionItemIndex, 1);
+    setValue(`definitions.${definitionIndex}.${itemType}s`, definitionItems);
+  };
   const onSubmit = (data: EntryForm) => {
     console.log(data);
   };
@@ -123,7 +144,7 @@ function App() {
           {definitionsVisibility[definitionIndex] && (
             <>
               {definition.examples?.map((example, exampleIndex) => (
-                <div key={exampleIndex}>
+                <div className="definitionItem" key={exampleIndex}>
                   <hr />
                   <div className="example grid">
                     <div className="field">
@@ -154,7 +175,7 @@ function App() {
                 </div>
               ))}
               <hr />
-              <div className="addExample">
+              <div className="addDefinitionItem">
                 <button
                   type="button"
                   onClick={() => {
@@ -162,6 +183,82 @@ function App() {
                   }}
                 >
                   new example to definition {definitionIndex + 1}
+                </button>
+              </div>
+              {definition.references?.map((reference, referenceIndex) => (
+                <div className="definitionItem" key={referenceIndex}>
+                  <hr />
+                  <div className="reference grid">
+                    <div className="field">
+                      <label>reference {referenceIndex + 1}</label>
+                      <input
+                        {...register(
+                          `definitions.${definitionIndex}.references.${referenceIndex}`
+                        )}
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        removeDefinitionItem(
+                          definitionIndex,
+                          referenceIndex,
+                          "reference"
+                        )
+                      }
+                    >
+                      <CgTrash />
+                    </button>
+                  </div>
+                </div>
+              ))}
+              <hr />
+              <div className="addDefinitionItem">
+                <button
+                  type="button"
+                  onClick={() => {
+                    addDefinitionItem(definitionIndex, "reference");
+                  }}
+                >
+                  new reference to definition {definitionIndex + 1}
+                </button>
+              </div>
+              {definition.synonyms?.map((synonym, synonymIndex) => (
+                <div className="definitionItem" key={synonymIndex}>
+                  <hr />
+                  <div className="synonym grid">
+                    <div className="field">
+                      <label>synonym {synonymIndex + 1}</label>
+                      <input
+                        {...register(
+                          `definitions.${definitionIndex}.synonyms.${synonymIndex}`
+                        )}
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        removeDefinitionItem(
+                          definitionIndex,
+                          synonymIndex,
+                          "synonym"
+                        )
+                      }
+                    >
+                      <CgTrash />
+                    </button>
+                  </div>
+                </div>
+              ))}
+              <hr />
+              <div className="addDefinitionItem">
+                <button
+                  type="button"
+                  onClick={() => {
+                    addDefinitionItem(definitionIndex, "synonym");
+                  }}
+                >
+                  new synonym to definition {definitionIndex + 1}
                 </button>
               </div>
             </>

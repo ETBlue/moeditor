@@ -52,32 +52,40 @@
   color: hsl(10, 20%, 30%);
 }
 
-.example {
-  grid-template-columns: 1fr 1fr auto;
+.definitionItem .grid {
   border-left: 2px hsl(200, 20%, 80%) solid;
   margin-left: 0.5rem;
   padding-left: 0.5rem;
 }
 
-.example button {
+.definitionItem .grid button {
   align-self: flex-end;
   background-color: hsl(10, 20%, 80%);
   color: hsl(10, 20%, 30%);
 }
 
-.addExample {
+.addDefinitionItem {
   margin-left: 0.5rem;
   padding-left: 0.5rem;
 }
 
-.addExample button {
+.addDefinitionItem button {
   background-color: hsl(90, 40%, 70%);
 }
 
+.example.grid {
+  grid-template-columns: 1fr 1fr auto;
+}
+
 @media screen and (max-width: 480px) {
-  .example {
+  .example.grid {
     grid-template-columns: 1fr;
   }
+}
+
+.reference.grid,
+.synonym.grid {
+  grid-template-columns: 1fr auto;
 }
 
 .App footer {
