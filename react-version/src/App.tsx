@@ -46,7 +46,7 @@ function App() {
       prev[index] = visibility;
       return [...prev];
     },
-    formData.definitions.map(() => false)
+    formData.definitions.map(() => true)
   );
   return (
     <form className="App" onSubmit={handleSubmit(onSubmit)}>
@@ -174,6 +174,10 @@ function App() {
           type="button"
           className="addDefinition"
           onClick={() => {
+            toggleDefinitionsVisibility({
+              index: formData.definitions.length,
+              visibility: true,
+            });
             addDefinition();
           }}
         >
