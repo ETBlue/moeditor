@@ -19,7 +19,7 @@
 }
 
 .required:after {
-  content: "*";
+  content: '*';
   color: hsl(0, 75%, 50%);
   position: absolute;
   right: -1em;
@@ -27,7 +27,7 @@
 }
 
 #word {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 @media screen and (max-width: 768px) {
@@ -74,7 +74,7 @@
 }
 
 .example.grid {
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr auto;
 }
 
 @media screen and (max-width: 480px) {

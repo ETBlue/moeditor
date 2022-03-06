@@ -17,7 +17,8 @@ export interface Entry {
 }
 
 export interface EntryForm {
-  word: string;
+  title: string;
+  name?: string;
   stem?: string;
   repetition?: string;
   definitions: Definition[];
@@ -32,8 +33,7 @@ export interface Definition {
 }
 
 export interface Example {
-  prefix: string;
-  text: string;
-  separator?: string;
-  subtext?: string;
+  amis?: string;
+  en?: string;
+  mandarin_fr?: string;
 }

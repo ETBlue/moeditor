@@ -6,7 +6,7 @@ export const entry = {
         {
           e: [
             "￹A ma'orad ano dafak.￻il pleuvra demain.",
-            "￹A komaen kako.￻je vais manger.",
+            '￹A komaen kako.￻je vais manger.',
             "￹Tayra kako a misalama.￻j'irai (je vais) m'amuser.",
           ],
           f: 'futur : la particule "a" placée devant un verbe marque le futur',
@@ -16,27 +16,27 @@ export const entry = {
             "￹O fagcalay a tamdaw konian.￻C'est un brave homme.",
             "￹O ga'ayay a holo'.￻le riz est bon.",
           ],
-          f: "être : particule de liaison entre un adjectif en ay et un nom",
+          f: 'être : particule de liaison entre un adjectif en ay et un nom',
         },
         {
-          e: ["￹Potawan a ci Parih.￻Potawan et Parih."],
-          f: "et : particule de liaison entre deux noms",
+          e: ['￹Potawan a ci Parih.￻Potawan et Parih.'],
+          f: 'et : particule de liaison entre deux noms',
         },
         {
           e: [
-            "￹Padagen cigra a mihinam to kolog.￻aide la à chercher les buffles.",
+            '￹Padagen cigra a mihinam to kolog.￻aide la à chercher les buffles.',
           ],
-          f: "pour; à",
+          f: 'pour; à',
         },
       ],
     },
   ],
-  t: "a",
+  t: 'a',
 };
 
 const entryM = {
   h: [
-    { d: [{ s: ["`'ad'ad~", "`wadwad~"], f: "étaler : (pour faire sécher)" }] },
+    { d: [{ s: ["`'ad'ad~", '`wadwad~'], f: 'étaler : (pour faire sécher)' }] },
   ],
   t: "'a'ad",
 };
@@ -44,8 +44,8 @@ const entryM = {
 const entryS = {
   t: "'a'owi",
   h: [
-    { d: [{ f: "重量偏向一邊，翹起來。", r: ["`ma'a'owi~"] }] },
-    { d: [{ f: "重量偏向一邊，翹起來。", r: ["`ma'a'owi~"] }] },
+    { d: [{ f: '重量偏向一邊，翹起來。', r: ["`ma'a'owi~"] }] },
+    { d: [{ f: '重量偏向一邊，翹起來。', r: ["`ma'a'owi~"] }] },
   ],
 };
 
@@ -54,22 +54,16 @@ export const entryFormData = {
     {
       examples: [
         {
-          prefix: "￹",
-          text: "A ma'orad ano dafak.",
-          separator: "￻",
-          subtext: "il pleuvra demain.",
+          amis: "A ma'orad ano dafak.",
+          mandarin_fr: 'il pleuvra demain.',
         },
         {
-          prefix: "￹",
-          text: "A komaen kako.",
-          separator: "￻",
-          subtext: "je vais manger.",
+          amis: 'A komaen kako.',
+          mandarin_fr: 'je vais manger.',
         },
         {
-          prefix: "￹",
-          text: "Tayra kako a misalama.",
-          separator: "￻",
-          subtext: "j'irai (je vais) m'amuser.",
+          amis: 'Tayra kako a misalama.',
+          mandarin_fr: "j'irai (je vais) m'amuser.",
         },
       ],
       description:
@@ -78,43 +72,35 @@ export const entryFormData = {
     {
       examples: [
         {
-          prefix: "￹",
-          text: "O fagcalay a tamdaw konian.",
-          separator: "￻",
-          subtext: "C'est un brave homme.",
+          amis: 'O fagcalay a tamdaw konian.',
+          mandarin_fr: "C'est un brave homme.",
         },
         {
-          prefix: "￹",
-          text: "O ga'ayay a holo'.",
-          separator: "￻",
-          subtext: "le riz est bon.",
+          amis: "O ga'ayay a holo'.",
+          mandarin_fr: 'le riz est bon.',
         },
       ],
       description:
-        "être : particule de liaison entre un adjectif en ay et un nom",
+        'être : particule de liaison entre un adjectif en ay et un nom',
     },
     {
       examples: [
         {
-          prefix: "￹",
-          text: "Potawan a ci Parih.",
-          separator: "￻",
-          subtext: "Potawan et Parih.",
+          amis: 'Potawan a ci Parih.',
+          mandarin_fr: 'Potawan et Parih.',
         },
       ],
-      description: "et : particule de liaison entre deux noms",
+      description: 'et : particule de liaison entre deux noms',
     },
     {
       examples: [
         {
-          prefix: "￹",
-          text: "Padagen cigra a mihinam to kolog.",
-          separator: "￻",
-          subtext: "aide la à chercher les buffles.",
+          amis: 'Padagen cigra a mihinam to kolog.',
+          mandarin_fr: 'aide la à chercher les buffles.',
         },
       ],
-      description: "pour; à",
+      description: 'pour; à',
     },
   ],
-  word: "a",
+  word: 'a',
 };

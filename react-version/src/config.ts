@@ -5,3 +5,7 @@ export const DICT_PREFIXES: { [key: string]: string } = {
   '#:': 's', // 蔡中涵大辭典
   '#~': 'p', // 方敏英字典
 };
+
+export const AMIS_EXAMPLE_PREFIX = '￹';
+export const EN_EXAMPLE_PREFIX = '￺';
+export const MANDARIN_FR_EXAMPLE_PREFIX = '￻';
