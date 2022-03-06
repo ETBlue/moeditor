@@ -1,19 +1,19 @@
-import { useReducer } from "react";
-import { useForm } from "react-hook-form";
-import { CgChevronDown, CgChevronRight, CgTrash } from "react-icons/cg";
-import { MdSave } from "react-icons/md";
+import { useReducer } from 'react';
+import { useForm } from 'react-hook-form';
+import { CgChevronDown, CgChevronRight, CgTrash } from 'react-icons/cg';
+import { MdSave } from 'react-icons/md';
 
-import { EntryForm } from "./types";
-import { entryFormData } from "./sample";
-import "./App.css";
+import { EntryForm } from './types';
+import { entryFormData } from './sample';
+import './App.css';
 
 function App() {
   const { register, setValue, watch, handleSubmit } = useForm<EntryForm>({
     defaultValues: entryFormData,
   });
   const addDefinition = () => {
-    setValue(`definitions.${watch("definitions").length}`, {
-      description: "",
+    setValue(`definitions.${watch('definitions').length}`, {
+      description: '',
     });
   };
   const removeDefinition = (definitionIndex: number) => {
@@ -25,10 +25,10 @@ function App() {
     const newExampleIndex =
       watch(`definitions.${definitionIndex}.examples`)?.length || 0;
     setValue(`definitions.${definitionIndex}.examples.${newExampleIndex}`, {
-      prefix: "",
-      text: "",
-      separator: "",
-      subtext: "",
+      prefix: '',
+      text: '',
+      separator: '',
+      subtext: '',
     });
   };
   const removeExample = (definitionIndex: number, exampleIndex: number) => {
@@ -38,19 +38,19 @@ function App() {
   };
   const addDefinitionItem = (
     definitionIndex: number,
-    itemType: "synonym" | "reference"
+    itemType: 'synonym' | 'reference'
   ) => {
     const newDefinitionItemIndex =
       watch(`definitions.${definitionIndex}.${itemType}s`)?.length || 0;
     setValue(
       `definitions.${definitionIndex}.${itemType}s.${newDefinitionItemIndex}`,
-      ""
+      ''
     );
   };
   const removeDefinitionItem = (
     definitionIndex: number,
     definitionItemIndex: number,
-    itemType: "synonym" | "reference"
+    itemType: 'synonym' | 'reference'
   ) => {
     const definitionItems =
       watch(`definitions.${definitionIndex}.${itemType}s`) || [];
@@ -76,15 +76,15 @@ function App() {
           <label>
             <span className="required">word</span>
           </label>
-          <input {...register("word", { required: true })} />
+          <input {...register('word', { required: true })} />
         </div>
         <div className="field">
           <label>stem (蔡中涵大辭典)</label>
-          <input {...register("stem")} />
+          <input {...register('stem')} />
         </div>
         <div className="field">
           <label>repetition (蔡中涵大辭典)</label>
-          <input {...register("repetition")} />
+          <input {...register('repetition')} />
         </div>
       </div>
       {formData.definitions.map((definition, definitionIndex) => (
@@ -208,7 +208,7 @@ function App() {
                         removeDefinitionItem(
                           definitionIndex,
                           synonymIndex,
-                          "synonym"
+                          'synonym'
                         )
                       }
                     >
@@ -222,7 +222,7 @@ function App() {
                 <button
                   type="button"
                   onClick={() => {
-                    addDefinitionItem(definitionIndex, "synonym");
+                    addDefinitionItem(definitionIndex, 'synonym');
                   }}
                 >
                   new synonym to definition {definitionIndex + 1}
@@ -248,7 +248,7 @@ function App() {
                         removeDefinitionItem(
                           definitionIndex,
                           referenceIndex,
-                          "reference"
+                          'reference'
                         )
                       }
                     >
@@ -262,7 +262,7 @@ function App() {
                 <button
                   type="button"
                   onClick={() => {
-                    addDefinitionItem(definitionIndex, "reference");
+                    addDefinitionItem(definitionIndex, 'reference');
                   }}
                 >
                   new reference to definition {definitionIndex + 1}
