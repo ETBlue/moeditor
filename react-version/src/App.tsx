@@ -1,7 +1,8 @@
 import { useQuery } from 'react-query';
-import { convertToForm, getDictWord, getJSONUrl } from './helpers';
+
+import { convertToForm, getDictWord, getJSONUrl } from './utilities/helpers';
+import Form from './blocks/Form';
 import './App.css';
-import Form from './Form';
 
 function App() {
   const { dict, word } = getDictWord(window.location.hash);

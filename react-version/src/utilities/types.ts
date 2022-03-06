@@ -18,9 +18,13 @@ export interface Entry {
 
 export interface EntryForm {
   title: string;
-  name?: string;
   stem?: string;
   repetition?: string;
+  heteronyms: Heteronym[];
+}
+
+export interface Heteronym {
+  name?: string;
   definitions: Definition[];
 }
 
