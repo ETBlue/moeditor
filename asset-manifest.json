@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/moeditor/static/css/main.1c79789b.css",
-    "main.js": "/moeditor/static/js/main.ad9152a0.js",
+    "main.css": "/moeditor/static/css/main.db90688a.css",
+    "main.js": "/moeditor/static/js/main.2da60c48.js",
     "static/js/787.9dcd6618.chunk.js": "/moeditor/static/js/787.9dcd6618.chunk.js",
     "index.html": "/moeditor/index.html",
-    "main.1c79789b.css.map": "/moeditor/static/css/main.1c79789b.css.map",
-    "main.ad9152a0.js.map": "/moeditor/static/js/main.ad9152a0.js.map",
+    "main.db90688a.css.map": "/moeditor/static/css/main.db90688a.css.map",
+    "main.2da60c48.js.map": "/moeditor/static/js/main.2da60c48.js.map",
     "787.9dcd6618.chunk.js.map": "/moeditor/static/js/787.9dcd6618.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c79789b.css",
-    "static/js/main.ad9152a0.js"
+    "static/css/main.db90688a.css",
+    "static/js/main.2da60c48.js"
   ]
 }
