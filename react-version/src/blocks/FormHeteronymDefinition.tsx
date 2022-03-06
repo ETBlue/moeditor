@@ -144,7 +144,7 @@ function FormHeteronymDefinition(props: Props) {
                 addExample();
               }}
             >
-              new example to definition {definitionIndex + 1}
+              add example to definition {definitionIndex + 1}
             </button>
           </div>
           {definition.synonyms?.map((synonym, synonymIndex) => (
@@ -164,7 +164,7 @@ function FormHeteronymDefinition(props: Props) {
                 addDefinitionItem('synonym');
               }}
             >
-              new synonym to definition {definitionIndex + 1}
+              add synonym to definition {definitionIndex + 1}
             </button>
           </div>
           {definition.references?.map((reference, referenceIndex) => (
@@ -184,7 +184,7 @@ function FormHeteronymDefinition(props: Props) {
                 addDefinitionItem('reference');
               }}
             >
-              new reference to definition {definitionIndex + 1}
+              add reference to definition {definitionIndex + 1}
             </button>
           </div>
         </>

@@ -1,4 +1,13 @@
-.App {
+.App header h1 {
+  padding: 1rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  text-align: center;
+  border-bottom: 1px solid hsl(200, 50%, 80%);
+}
+
+.fields {
+  background-color: hsl(50, 50%, 92.5%);
   padding: 1rem;
 }
 
@@ -42,14 +51,38 @@
   }
 }
 
+h2.heteronym {
+  color: #fff;
+  background-color: hsl(200, 80%, 50%);
+  border-width: 1px 0;
+  margin: 1rem -1rem;
+  padding: 1rem;
+}
+
+h2.heteronym.grid {
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+}
+
+h2.heteronym.grid button.icon {
+  margin: -1rem;
+}
+
+h2.heteronym.grid button.deleteHeteronym {
+  background-color: transparent;
+  color: hsl(10, 20%, 100%);
+  box-shadow: 0 0 0 1px hsl(10, 20%, 100%);
+}
+
 .definition .grid {
   grid-template-columns: auto auto 1fr auto;
   column-gap: 0;
 }
 
 .definition .grid button.deleteDefinition {
-  background-color: hsl(10, 50%, 80%);
-  color: hsl(10, 20%, 30%);
+  background: transparent;
+  box-shadow: 0 0 0 1px inset hsl(10, 50%, 80%);
+  color: hsl(10, 50%, 60%);
 }
 
 .definitionItem .grid {
@@ -60,8 +93,9 @@
 
 .definitionItem .grid button {
   align-self: flex-end;
-  background-color: hsl(10, 50%, 80%);
-  color: hsl(10, 20%, 30%);
+  background: transparent;
+  box-shadow: 0 0 0 1px inset hsl(10, 50%, 80%);
+  color: hsl(10, 50%, 60%);
 }
 
 .addDefinitionItem {
@@ -70,7 +104,9 @@
 }
 
 .addDefinitionItem button {
-  background-color: hsl(80, 70%, 60%);
+  background: transparent;
+  box-shadow: 0 0 0 1px inset hsl(80, 70%, 50%);
+  color: hsl(80, 80%, 40%);
 }
 
 .example.grid {
@@ -89,18 +125,19 @@
 }
 
 .addDefinition {
-  background-color: hsl(80, 70%, 60%);
+  background: transparent;
+  box-shadow: 0 0 0 1px inset hsl(80, 70%, 50%);
+  color: hsl(80, 80%, 40%);
 }
 
 .App footer {
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto;
   border-top: 1px solid hsl(200, 50%, 80%);
-  background-color: hsl(50, 20%, 85%);
-  margin: 1rem -1rem -1rem -1rem;
   padding: 1rem;
 }
 
-.App footer .submit {
+.App footer .submit,
+.App footer .addHeteronym {
   font-size: 1rem;
   padding: 0.7rem 1rem;
   background-color: hsl(200, 80%, 50%);

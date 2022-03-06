@@ -1,9 +1,11 @@
 import { useReducer } from 'react';
+import { CgChevronDown, CgChevronRight } from 'react-icons/cg';
 
 import { Heteronym } from '../utilities/types';
 
 import Definition from './FormHeteronymDefinition';
 import { BlockProps } from './Form';
+import { MdWarning } from 'react-icons/md';
 
 export type HeteronymId = `heteronyms.${number}`;
 export type DefinitionVisibility = boolean[];
@@ -15,10 +17,12 @@ export type ToggleDefinitionsVisibility = (action: {
 interface Props extends BlockProps {
   index: number;
   heteronym: Heteronym;
+  deleteHeteronym: (heteronymIndex: number) => void;
 }
 
 function FormHeteronym(props: Props) {
-  const { watch, setValue, register, heteronym, index } = props;
+  const { watch, setValue, register, heteronym, index, deleteHeteronym } =
+    props;
   const heteronymId: HeteronymId = `heteronyms.${index}`;
 
   const addDefinition = () => {
@@ -33,18 +37,68 @@ function FormHeteronym(props: Props) {
   };
 
   const [definitionsVisibility, toggleDefinitionsVisibility] = useReducer(
-    (prev: boolean[], action: { index: number; visibility: boolean }) => {
+    (
+      prev: boolean[],
+      action: { index: number | 'all'; visibility: boolean }
+    ) => {
       const { index, visibility } = action;
-      prev[index] = visibility;
-      return [...prev];
+      if (index === 'all') {
+        return prev.map(() => visibility);
+      } else {
+        prev[index] = visibility;
+        return [...prev];
+      }
     },
     heteronym.definitions.map(() => true)
   );
+  const isCollapsable = definitionsVisibility.includes(true);
 
   return (
     <div className="FormHeteronym">
       <hr />
-      <h1>Heteronym {index + 1}</h1>
+      <h2 className="heteronym grid">
+        {isCollapsable ? (
+          <button
+            type="button"
+            className="icon text"
+            onClick={(e) => {
+              e.preventDefault();
+              toggleDefinitionsVisibility({
+                index: 'all',
+                visibility: false,
+              });
+            }}
+          >
+            <CgChevronDown />
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="icon text"
+            onClick={(e) => {
+              e.preventDefault();
+              toggleDefinitionsVisibility({
+                index: 'all',
+                visibility: true,
+              });
+            }}
+          >
+            <CgChevronRight />
+          </button>
+        )}
+        Heteronym {index + 1}
+        <span />
+        <button
+          type="button"
+          className="deleteHeteronym"
+          onClick={() => {
+            deleteHeteronym(index);
+          }}
+        >
+          <MdWarning />
+          <span>delete heteronym</span>
+        </button>
+      </h2>
       <div className="field">
         <label>
           <span>name</span>
@@ -75,7 +129,7 @@ function FormHeteronym(props: Props) {
           addDefinition();
         }}
       >
-        new definition
+        add definition
       </button>
     </div>
   );

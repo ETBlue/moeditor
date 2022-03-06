@@ -13,13 +13,17 @@ body {
   margin: 0;
 
   color: hsl(50, 20%, 30%);
-  background-color: hsl(50, 50%, 92.5%);
+  background-color: hsl(50, 20%, 85%);
 }
 
 code,
 input {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+label {
+  opacity: 0.625;
 }
 
 label,
@@ -31,7 +35,6 @@ h3 {
   text-transform: uppercase;
   padding: 0.25em 0.5em;
   margin: 0;
-  opacity: 0.625;
   line-height: 1em;
 }
 
@@ -77,12 +80,4 @@ button.text {
 hr {
   border: none;
   margin: 0.5rem 0;
-}
-
-h1 {
-  color: #fff;
-  background-color: hsl(200, 80%, 50%);
-  border-width: 1px 0;
-  margin: 1rem -1rem;
-  padding: 1rem;
 }
