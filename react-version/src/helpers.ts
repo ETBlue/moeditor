@@ -71,16 +71,20 @@ export function convertToJson(data: EntryForm): Entry {
   const d = definitions.map((def) => {
     const { description, examples, synonyms, references, type } = def;
 
-    const e = examples?.map((example) => {
-      const { amis, en, mandarin_fr } = example;
-      return `${AMIS_EXAMPLE_PREFIX}${amis}${EN_EXAMPLE_PREFIX}${en}${MANDARIN_FR_EXAMPLE_PREFIX}${mandarin_fr}`;
-    });
+    const e = examples
+      ?.map((example) => {
+        const { amis, en, mandarin_fr } = example;
+        return `${AMIS_EXAMPLE_PREFIX}${amis}${EN_EXAMPLE_PREFIX}${en}${MANDARIN_FR_EXAMPLE_PREFIX}${mandarin_fr}`;
+      })
+      .filter((e) => !!e);
+    const s = synonyms?.filter((s) => !!s);
+    const r = references?.filter((r) => !!r);
 
     return {
       f: description,
       e,
-      s: synonyms,
-      r: references,
+      s,
+      r,
       type,
     };
   });

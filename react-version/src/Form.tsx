@@ -2,6 +2,7 @@ import { useReducer } from 'react';
 import { useForm } from 'react-hook-form';
 import { CgChevronDown, CgChevronRight, CgTrash } from 'react-icons/cg';
 import { MdSave } from 'react-icons/md';
+import { convertToJson } from './helpers';
 
 import { EntryForm } from './types';
 
@@ -61,7 +62,7 @@ function Form(props: Props) {
     setValue(`definitions.${definitionIndex}.${itemType}s`, definitionItems);
   };
   const onSubmit = (data: EntryForm) => {
-    console.log(data);
+    console.log(convertToJson(data));
   };
   const formData = watch();
   const [definitionsVisibility, toggleDefinitionsVisibility] = useReducer(
