@@ -5,6 +5,7 @@ import { MdSave } from 'react-icons/md';
 
 import { EntryForm } from './types';
 import { entryFormData } from './sample';
+import { getDict } from './helpers';
 import './App.css';
 
 function App() {
@@ -69,6 +70,14 @@ function App() {
     },
     formData.definitions.map(() => true)
   );
+
+  const { dict, word } = getDict(window.location.hash);
+  if (!dict) {
+    return <div>dictionary not defined</div>;
+  }
+  if (!word) {
+    return <div>word not defined</div>;
+  }
   return (
     <form className="App" onSubmit={handleSubmit(onSubmit)}>
       <div id="word" className="grid">
